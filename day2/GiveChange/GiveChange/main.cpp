@@ -14,7 +14,7 @@ int main() {
     int moneyPaid;
     int changeReturn;
     
-    //giving values to the coins
+    //giving values to the coins //const?
     int quarter = 25;
     int dime = 10;
     int nickel = 5;
@@ -65,8 +65,6 @@ int main() {
     //new variable for change in pennies to return
     int changePennies = changeReturn/penny;
     std::cout << "Pennies: " << changePennies << "\n";
-    
-
     remainingChange = changeReturn%(changePennies*penny);
     std::cout <<"change to still return: " << remainingChange << " cents\n";
     
