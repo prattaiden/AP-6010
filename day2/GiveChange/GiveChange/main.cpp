@@ -7,7 +7,8 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
+int main() {
+    
     
     int itemPrice;
     int moneyPaid;
@@ -36,7 +37,12 @@ int main(int argc, const char * argv[]) {
     std::cout << "Quarters: " << changeQuarters << "\n";
         
     //updating the change return value after quarters
+    //doing this by subtracting max quarter $value by total change
     changeReturn = changeReturn - changeQuarters * quarter;
+    
+    //now finding the amount of change left to return to the user by using modulus
+    int remainingChange = changeReturn%(changeQuarters*quarter);
+    std::cout << "change to still return: " << remainingChange << " cents\n";
     
     //new variable is the number of dimes needed to return
     int changeDimes = changeReturn/dime ;
@@ -44,6 +50,8 @@ int main(int argc, const char * argv[]) {
     
     //updating change return value after dimes
     changeReturn = changeReturn - changeDimes * dime;
+    remainingChange = changeReturn%(changeDimes*dime);
+    std::cout <<"change to still return: " << remainingChange << " cents\n";
     
     //new variable is the number of nickels needed to return
     int changeNickels = changeReturn/nickel;
@@ -51,10 +59,17 @@ int main(int argc, const char * argv[]) {
     
     //updating the change return value after nickels
     changeReturn = changeReturn - changeNickels * nickel;
+    remainingChange = changeReturn%(changeNickels*nickel);
+    std::cout <<"change to still return: " << remainingChange << " cents\n";
     
     //new variable for change in pennies to return
     int changePennies = changeReturn/penny;
     std::cout << "Pennies: " << changePennies << "\n";
+    
+
+    remainingChange = changeReturn%(changePennies*penny);
+    std::cout <<"change to still return: " << remainingChange << " cents\n";
+    
 
     
     return 0;
