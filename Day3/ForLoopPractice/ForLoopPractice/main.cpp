@@ -52,7 +52,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "\n";
     //next part, printing all odd numbers from 1 - 20. two solutions
     
-   //with an iff statement
+   //with an if statement
     for  (int number = 0; number <= 20; number++){
         if (number % 2 != 0){
             std::cout << " " << number;
@@ -85,7 +85,7 @@ int main(int argc, const char * argv[]) {
     //do while now, taking the sum then subtracting the new number so that the final answer does not count the negative added
     while (newNum > 0);
     std::cout << "final number: " << sumNum - newNum << "\n";
-    
+  
     
 //MULTI table
     
