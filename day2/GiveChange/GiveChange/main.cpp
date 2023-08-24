@@ -15,10 +15,10 @@ int main() {
     int changeReturn;
     
     //giving values to the coins //const?
-    int quarter = 25;
-    int dime = 10;
-    int nickel = 5;
-    int penny = 1;
+    const int quarter = 25;
+    const int dime = 10;
+    const int nickel = 5;
+    const int penny = 1;
     
     //prompting user to enter values for the code
     std::cout << "Enter the price of the item in cents:\n";
