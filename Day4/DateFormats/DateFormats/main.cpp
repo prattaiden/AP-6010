@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
     //making a substring for the years
     std::string sub3 = userDate.substr(6,4);
     std::cout << sub3 << "\n";
-    int sub3_int = std::stoi(sub3);
+
     
     
     

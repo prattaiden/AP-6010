@@ -47,7 +47,6 @@ int main(int argc, const char * argv[]) {
     std::string sub3 = userDate.substr(6,4);
     std::cout << sub3 << "\n";
     std::string sub4 = userDate.substr(8,2);
-   // int sub3_int = std::stoi(sub3);
     int sub4_int = std::stoi(sub4);
     
     //MAGIC DATES!!

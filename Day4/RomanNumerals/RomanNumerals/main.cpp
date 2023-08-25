@@ -15,6 +15,10 @@ int main(int argc, const char * argv[]) {
     std::cout << "Enter a decimal number:";
     std::cin >> userNum;
     
+    if (userNum < 0){
+        std::cout << "invalid\n";
+    }
+    
     while (userNum > 0){
         if (userNum >= 1000){
             std::cout << "M";
@@ -68,9 +72,7 @@ int main(int argc, const char * argv[]) {
             std::cout << "I";
             userNum = (userNum - 1);
         }
-        else{
-            std::cout << "end";
-        }
+
         
         
     }
