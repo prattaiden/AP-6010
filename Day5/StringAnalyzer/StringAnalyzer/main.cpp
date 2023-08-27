@@ -88,10 +88,20 @@ double AverageVowelPerWord(std::string s){
 //MAIN
 int main(int argc, const char * argv[]) {
     
-    std::cout << "Enter a string containing one or more sentences: ";
-    std::string input;
-    std::getline( std::cin, input );
+    bool userInput = true;
+    
+    while (userInput){
         
+        std::cout << "Enter a string containing one or more sentences: \n";
+        std::string input;
+        std::getline( std::cin, input );
+        
+        if (input == "done"){
+            userInput = false;
+        }
+        else {
+            
+            std::cout << "Analysis of your string: \n";
         
     std::cout << "Number of words: " << numWords(input) << "\n";
         
@@ -105,13 +115,10 @@ int main(int argc, const char * argv[]) {
         
     std::cout << "Average vowels per word: " << AverageVowelPerWord(input) << "\n";
         
-        
-    do {
-    
+        }
     }
     
-    while (input != "done");
-    
+    std::cout << "Thanks! \n";
     
     return 0;
 }
