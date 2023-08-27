@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
     std::cin >> inputWord;
     std::cout << inputWord << "\n";
     
-    for (int long i = inputWord.length()-1; i >= 0 ; i--){
+    for (double i = inputWord.length()-1; i >= 0 ; i--){
         reversed = reversed + inputWord[i];
         }
     
