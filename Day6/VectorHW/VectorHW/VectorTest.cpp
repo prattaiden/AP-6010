@@ -93,6 +93,14 @@ int main()
     if (Average(v1) != 1){
         ErrorExit("Average() - test 1");
     }
+    if (Average(v1) > 1){
+        ErrorExit("Average() - test 2");
+    }
+    
+    if (Average(v1) < 1){
+        ErrorExit("Average() - test 3");
+        
+    }
     
     //TEST for is sorted here
     
