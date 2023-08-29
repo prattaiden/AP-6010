@@ -12,7 +12,7 @@ int main(int argc, const char * argv[]) {
     //variable for user to store their number in
     int userNum;
     //prompting user to enter
-    std::cout << "Enter a decimal number:";
+    std::cout << "Enter a number:";
     std::cin >> userNum;
     
     if (userNum < 0){
@@ -73,7 +73,6 @@ int main(int argc, const char * argv[]) {
             userNum = (userNum - 1);
         }
 
-        
         
     }
     std::cout << "\n";
