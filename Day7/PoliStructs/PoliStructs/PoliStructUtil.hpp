@@ -27,6 +27,7 @@ bool isCplusers(Politician poli);
 bool politicianName(Politician poli);
 bool politicianName(Politician poli);
 
+
 //vector for finding javacans
 std::vector <Politician> Javacans(std::vector <Politician> allPoliticians);
 
