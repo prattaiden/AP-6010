@@ -9,11 +9,11 @@
 #include "CardsUtil.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
     
+    //making a vector of type Card called DeckofFifyTwo. setting it equal to creatingDeckOfCards.
     std::vector<Card> DeckofFiftyTwo = creatingDeckOfCards();
     
+    //calling printDeck function
     printDeck(DeckofFiftyTwo);
     
     return 0;

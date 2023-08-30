@@ -12,14 +12,8 @@
 #include <vector>
 #include <string>
 
-//cards rank constants
-//const int A = 1;
-//const int J = 11;
-//const int Q = 12;
-//const int K = 13;
-//card suit constants
 
-
+//struct called Card
 struct Card{
     int rank;
     std::string suit;
@@ -28,7 +22,8 @@ struct Card{
 //creating deck of cards with 52 inside
 std::vector<Card> creatingDeckOfCards();
 
+//declaration of function printDeck
 void printDeck(std::vector<Card> DeckofFiftyTwo);
-    
+
 
 #endif /* CardsUtil_hpp */
