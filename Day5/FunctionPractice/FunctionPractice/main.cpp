@@ -29,16 +29,17 @@ bool isCapitalized(std::string inputS){
  
 
 //bool boolToString()
-bool boolToString(bool X){
+std::string boolToString(bool X){
     if (X == true){
-        return true;
+        return "true";
         
     }
     else {
-        return false;
+        return "false";
     }
 
 }
+
 
 //isPrime
 bool isPrime(int x){
@@ -115,7 +116,7 @@ int main(int argc, const char * argv[]) {
 //part 2 boolToString
     std::cout << "Checking if the function isCapitalized is true: \n";
     boolToString(isCapitalized(stringCap));
-    if (boolToString(isCapitalized(stringCap))){
+    if (boolToString(isCapitalized(stringCap))=="true"){
         std::cout << "The function is True\n";
     }
     else {
