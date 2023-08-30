@@ -10,4 +10,11 @@
 
 #include <stdio.h>
 
+//sum
+int sum(std::vector<int> input){
+    
+    
+}
+    
+    
 #endif /* Functions_hpp */

@@ -37,6 +37,7 @@ int main(int argc, const char * argv[]) {
 //list of Cplusers
     std::vector <Politician> listOfFedsAndCplusers;
     
+    //test cpluser
 
 //calling function for fedcplusers
     listOfFedsAndCplusers = federalCplusers(listOfPoliticians);
