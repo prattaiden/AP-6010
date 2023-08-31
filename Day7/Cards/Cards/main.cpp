@@ -17,24 +17,46 @@ int main(int argc, const char * argv[]) {
     //time?
     srand(time(0));
    //counters
-    int counterFlush = 0;
-    
+    int counterStraights = 0;
+    int counterFlushes = 0;
+    int counterStraightFlushes = 0;
+    int counterFullHouses = 0;
+    int counterRoyalFlush = 0;
+    //this for loop should loop through a deck of cards
+    //take 5 from the randomized shuffled deck
+    //then loop through 1000x times
+    //checking and counting how many times a Straight is hit
     //whole vectore to do the counting
-    for(int a = 0; a < 1000; a++){
+    for(int a = 0; a < 100000; a++){
         std::vector<Card> DeckofFiftyTwo = creatingDeckOfCards();
         //function to run random
         shuffleTheDeck(DeckofFiftyTwo);
         //calling printDeck function
+        //commented out so it does not print a deck 10000x times
         //printDeck(DeckofFiftyTwo);
-        countFlushes(isItStraight(getFiveCards(DeckofFiftyTwo)), counterFlush);
+        //COUNTstraights here
+        countStraights(isItStraight(getFiveCards(DeckofFiftyTwo)), counterStraights);
+        //COUNTflushes here
+        countFlush(isItFlush(getFiveCards(DeckofFiftyTwo)), counterFlushes);
+        //Count straightflushes here
+        countStraightFlushes(isItStraightFlush(getFiveCards(DeckofFiftyTwo)), counterStraightFlushes);
+        //Count FullHouses here
+        countFullHouse(isItFullHouse(getFiveCards(DeckofFiftyTwo)), counterFullHouses);
+        //count royalflushes here
+        countRoyalFlush(isItRoyalFlush(getFiveCards(DeckofFiftyTwo)), counterRoyalFlush);
     }
-    std::cout << counterFlush << "\n";
     
+    std::cout << "Straight count: " << counterStraights << "\n";
+    //sometimes this will give 1 but most the times it is 0. probablity does not seem right. gave 5 when i did 10,000
+    std::cout << "Flush count: " << counterFlushes << "\n";
+
+    std::cout << "Straight Flush count: " << counterStraightFlushes << "\n";
     
+    std::cout << "Full House count: " << counterFullHouses << "\n";
     
-    //function to check random set of cards for poker hand
+    std::cout << "Royal Flush count: " << counterRoyalFlush << "\n";
     
-    
+    //to do tests:
     //test assert is it a striaght. != staright (if it isnt)
     
     //test vector deck for  flush
@@ -46,7 +68,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> flushDeck{c1, c2, c3, c4, c5};
     
-    checkFlushResult(flushDeck);
+    isItFlush(flushDeck);
     
     
     //test vector deck for straight
@@ -58,7 +80,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> straightDeck{s1, s2, s3, s4, s5};
     
-    checkStraightResult(straightDeck);
+    isItStraight(straightDeck);
     
     //test vector for straight flush deck of 5
     Card f1 = {1, "Hearts"};

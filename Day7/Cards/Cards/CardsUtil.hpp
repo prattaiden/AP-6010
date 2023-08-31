@@ -19,7 +19,7 @@ struct Card{
     std::string suit;
 };
 
-//creating deck of cards with 52 inside
+//creating deck of cards
 std::vector<Card> creatingDeckOfCards();
 
 //declaration of function printDeck

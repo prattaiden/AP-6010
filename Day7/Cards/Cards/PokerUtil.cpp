@@ -12,6 +12,9 @@
 #include <string>
 #include <iostream>
 
+//a void function that shuffles the deck
+//this function takes in input of a Card type called newDeckOfCards
+//goes through a for loop and assigns int j to a random number %52
 void shuffleTheDeck (std::vector <Card>& newDeckOfCards){
     for (unsigned int i = 0 ; i < newDeckOfCards.size(); i++){
         int j = std::rand() % 52;
@@ -36,6 +39,8 @@ std::vector<Card> getFiveCards (std::vector<Card> topFiveCards){
                                                    
 //ISTHEREAKING
 //takes our hand and checks if a king is present
+//a king .rank value is equal to 13
+//this will later be used when looking at royals and a will be changed to 14
 bool isThereKing (std::vector<Card> aceRank){
     for (int i = 0; i < aceRank.size(); i++){
         if(aceRank[i].rank == 13){
@@ -45,7 +50,7 @@ bool isThereKing (std::vector<Card> aceRank){
     }
     return false;
 }
-
+//not working??????????????????????/
 //SORTING
 //sorts the cards
 std::vector<int> sortRank (std::vector<Card> sortedHand){
@@ -58,75 +63,84 @@ std::vector<int> sortRank (std::vector<Card> sortedHand){
         if (rank==1 && isThereKing(sortedHand)){
             rank = 14;
         }
-        //pushing back
+        //pushing back into the deck
         sortedRanks.push_back(rank);
     }
     //sorts the ranks lowest to high as an int
     std::sort(sortedRanks.begin(), sortedRanks.end());
         return sortedRanks;
 }
-               
+    
+//COUNTERS for each of our poker hands:
+//making a passthrough & function to count the number of straights that occur
+int countStraights (bool straightCount , int& counterStraights){
+    if(straightCount){
+        counterStraights++;
+    }
+    return counterStraights;
+}
 
+//making a passthrough & function to count the number of floats that occur
+int countFlush (bool flushCount , int& counterFlushes){
+    if(flushCount){
+        counterFlushes++;
+    }
+    return counterFlushes;
+}
 
-//std::sort
+int countStraightFlushes (bool straightFlushCount , int& counterStraightFlush){
+    if(straightFlushCount){
+        counterStraightFlush++;
+    }
+    return counterStraightFlush;
+}
+
+int countFullHouse (bool fullHouseCount , int& counterFullHouse){
+    if(fullHouseCount){
+        counterFullHouse++;
+    }
+    return counterFullHouse;
+}
+
+int countRoyalFlush (bool royalFlushCount , int& counterRoyalFlush){
+    if(royalFlushCount){
+        counterRoyalFlush++;
+    }
+    return counterRoyalFlush;
+}
 
 
 //FLUSH bool and void to check if it is a flush
-bool isItFlush (std::vector<Card>& flushDeck){
+bool isItFlush (std::vector<Card> flushDeck){
     for(int i = 1; i<5; i++){
         if (flushDeck[i-1].suit != flushDeck[i].suit){
-            return false;
-        }
-    }
-return true;
-}
-
-void checkFlushResult (std::vector<Card>& flushDeckTest){
-    if (isItFlush(flushDeckTest)){
-        std::cout << "It is a flush.\n";
-    }
-    else{
-        std::cout << "It is not a flush.\n";
-    }
-}
-
-//making a passthrough & function to count the number of flushes that occur
-int countFlushes (bool flushCount , int& counterFlush){
-    if(flushCount){
-        counterFlush++;
-    }
-    return counterFlush;
-}
-
-//STRAIGHT bool to check if it is a straight
-bool isItStraight (std::vector<Card> straightDeck){
-    std::vector<int> handSort;
-    for (int i = 1; i<5; i++){
-        sortRank(straightDeck);
-        if (straightDeck[i].rank != straightDeck[i-1].rank + 1){
             return false;
         }
     }
     return true;
 }
 
-void checkStraightResult (std::vector<Card>& straightDeckTest){
-    if(isItStraight(straightDeckTest)){
-        std::cout << "It is a straight.\n";
+//I THINK THERE IS SOMETHING WRONG WITH THE ISITSTRAIGHT FUNCT OR THE SORTER
+//STRAIGHT bool to check if it is a straight
+bool isItStraight (std::vector<Card> straightDeck){
+    std::vector<int> handSort;
+    for (int i = 1; i<5; i++){
+        sortRank(straightDeck);
+        if (straightDeck[i-1].rank != straightDeck[i].rank + 1){
+            return false;
+        }
     }
-    else{
-        std::cout << "It is not a straight.\n";
-    }
+    return true;
 }
 
 //straightflush bool
-bool isItStraightFlush (std::vector<Card>& straightFlushDeck){
+bool isItStraightFlush (std::vector<Card> straightFlushDeck){
     if(isItStraight(straightFlushDeck) && (isItFlush(straightFlushDeck))){
-        std::cout << "It is a straight flush.\n";
+        //std::cout << "It is a straight flush.\n";
         return true;
     }
     else{
-        std::cout << "It is not a straight flush.\n";
+        //std::cout << "It is not a straight flush.\n";
         return false;
     }
 }
@@ -135,17 +149,11 @@ bool isItStraightFlush (std::vector<Card>& straightFlushDeck){
 
 bool isItRoyalFlush (std::vector<Card> royalFlushDeck){
     if(isItStraightFlush(royalFlushDeck) && royalFlushDeck[0].rank == 10 && royalFlushDeck[4].rank == 14){
-        std::cout << "It is a royal flush.\n";
+
             return true;
         
         }
-    
-    else{
-        std::cout << "It is not a royal flush.\n";
         return false;
-    }
-    
-
     }
 
 bool isItFullHouse (std::vector<Card> fullHouseDeck){
@@ -162,11 +170,9 @@ bool isItFullHouse (std::vector<Card> fullHouseDeck){
         }
         
         if ((firstCardPass == 3 && secondCardPass == 2)|| (firstCardPass == 2 && secondCardPass == 3)){
-            std::cout << "full\n";
             return true;
         }
     }
-    std::cout << "not full\n";
     return false;
 }
 
