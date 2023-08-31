@@ -11,7 +11,7 @@
 //creating a vector as data type "Card" and calling it creatingDeckOfCards
 //setting another vector of data type "Card" calling it "returnDeck". this will be saved as a vector of the cards and the returned at the end of the function
 //creating a string called suit with 4 strings in it (array?)
-//for ecah loop which will have string "s" cycle through the suit [4] array and save each position as the suit of cards
+//for each loop which will have string "s" cycle through the suit [4] array and save each position as the suit of cards
 //within each suit of cards, another for loop runs through 1 - 13 which updates the rank of the card.
 //the function then pushses back each suit + rank of struct "newcard" into returnDeck.
 std::vector<Card> creatingDeckOfCards(){
