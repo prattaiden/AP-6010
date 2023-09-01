@@ -16,12 +16,8 @@
 void shuffleTheDeck (std::vector <Card>& newDeckOfCards);
 
 bool isItFlush (std::vector<Card> flushDeck);
-    
-void checkFlushResult (std::vector<Card>& flushDeckTest);
 
 bool isItStraight (std::vector<Card> straightDeck);
-
-void checkStraightResult (std::vector<Card>& straightDeckTest);
 
 bool isItStraightFlush (std::vector<Card> straightFlushDeck);
 

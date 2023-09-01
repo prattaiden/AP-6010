@@ -133,7 +133,7 @@ int main()
         std::cout << "v2 is sorted.\n";
     }
     else{
-        std::cout << "v2 is not sorted/\n";
+        std::cout << "v2 is not sorted\n";
     }
 
     // Since any failed test exits the program, if we made it this far, we passed all tests.

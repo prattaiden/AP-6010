@@ -3,7 +3,14 @@
 //  Cards
 //
 //  Created by Aiden Pratt on 8/29/23.
-//
+// With Melanie Prettyman
+
+//Percentage we see each hand
+//Straight count: 0.3885%
+//Flush count: 0.2037%
+//Straight Flush count: 0.0018%
+//Full House count: 0.1451%
+//Royal Flush count: 0.0001%
 
 #include <iostream>
 #include "CardsUtil.hpp"
@@ -11,9 +18,7 @@
 #include <vector>
 
 int main(int argc, const char * argv[]) {
-    
-    //making a vector of type Card called DeckofFifyTwo. setting it equal to creatingDeckOfCards.
-    
+
     //time?
     srand(time(0));
    //counters
@@ -27,14 +32,10 @@ int main(int argc, const char * argv[]) {
     //then loop through 1000x times
     //checking and counting how many times a Straight is hit
     //whole vectore to do the counting
-    for(int a = 0; a < 100000; a++){
-        std::vector<Card> DeckofFiftyTwo = creatingDeckOfCards();
+    std::vector<Card> DeckofFiftyTwo = creatingDeckOfCards();
+    for(int a = 0; a < 1000000; a++){
         //function to run random
         shuffleTheDeck(DeckofFiftyTwo);
-        //calling printDeck function
-        //commented out so it does not print a deck 10000x times
-        //printDeck(DeckofFiftyTwo);
-        //COUNTstraights here
         countStraights(isItStraight(getFiveCards(DeckofFiftyTwo)), counterStraights);
         //COUNTflushes here
         countFlush(isItFlush(getFiveCards(DeckofFiftyTwo)), counterFlushes);
@@ -45,20 +46,20 @@ int main(int argc, const char * argv[]) {
         //count royalflushes here
         countRoyalFlush(isItRoyalFlush(getFiveCards(DeckofFiftyTwo)), counterRoyalFlush);
     }
-    
-    std::cout << "Straight count: " << counterStraights << "\n";
-    //sometimes this will give 1 but most the times it is 0. probablity does not seem right. gave 5 when i did 10,000
-    std::cout << "Flush count: " << counterFlushes << "\n";
 
-    std::cout << "Straight Flush count: " << counterStraightFlushes << "\n";
+    std::cout << "Straight count: " << ((counterStraights*1.0)/1000000)*100 << "%\n";
+    //sometimes this will give 1 but most the times it is 0. probablity does not seem right. gave 5 when i did 10,000
+    std::cout << "Flush count: " << ((counterFlushes*1.0)/1000000)*100 << "%\n";
+
+    std::cout << "Straight Flush count: " << ((counterStraightFlushes*1.0)/1000000)*100 << "%\n";
+
+    std::cout << "Full House count: " << ((counterFullHouses*1.0)/1000000)*100 << "%\n";
+
+    std::cout << "Royal Flush count: " << ((counterRoyalFlush*1.0)/1000000)*100 << "%\n";
     
-    std::cout << "Full House count: " << counterFullHouses << "\n";
-    
-    std::cout << "Royal Flush count: " << counterRoyalFlush << "\n";
     
     //to do tests:
     //test assert is it a striaght. != staright (if it isnt)
-    
     //test vector deck for  flush
     Card c1 = {3, "Clubs"};
     Card c2 = {1, "Clubs"};
@@ -68,8 +69,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> flushDeck{c1, c2, c3, c4, c5};
     
-    isItFlush(flushDeck);
-    
+    //isItFlush(flushDeck);
     
     //test vector deck for straight
     Card s1 = {4, "Clubs"};
@@ -80,8 +80,8 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> straightDeck{s1, s2, s3, s4, s5};
     
-    isItStraight(straightDeck);
-    
+    //isItStraight(straightDeck);
+   
     //test vector for straight flush deck of 5
     Card f1 = {1, "Hearts"};
     Card f2 = {2, "Hearts"};

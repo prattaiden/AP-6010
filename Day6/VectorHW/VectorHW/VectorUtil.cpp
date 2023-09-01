@@ -72,10 +72,10 @@ int FindMin( vector<int> input )
  */
 int FindMax( vector<int> input ){
 
-    int maxVal = input[0];
+    int maxVal = input[0]; //creating maxVal with the first element of the vector
     for (int i = 1; i < input.size(); i++){
         if (input[i] > maxVal){
-            maxVal = input[i];
+            maxVal = input[i]; //if there is a larger number than inputi , it is set to maxVal
         }
     }
     return maxVal;
@@ -94,11 +94,12 @@ int FindMax( vector<int> input ){
  */
 int Average( vector<int> input )
 {
+    //finds the sum by looping through each int in the input size and adds them together
     int sum = 0;
     for (int i = 0; i < input.size(); i++){
         sum += input[i];
     }
-    
+    //taking the sum and dividing it by the size of hte input vector
   int avg = sum/input.size();
     
   return avg;
@@ -125,8 +126,11 @@ int Average( vector<int> input )
  *   An empty vector is considered sorted, since there are no items out of order
  *   A single-item vector is considered sorted, since there are no items out of order
  */
+
+
 bool IsSorted( vector<int> input ){
-    
+    //sorted
+    //checking if 
     for (int i = 0; i < input.size() - 1; i++){
         if (input[i] > input[i + 1]){
             return false;
