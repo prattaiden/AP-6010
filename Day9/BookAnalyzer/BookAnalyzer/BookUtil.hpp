@@ -41,7 +41,5 @@ void getLocationPercentageAndAdjacentWords(const std::vector<std::string>& book,
 //converting the book to lowercase for the key word search
 void ConvertVectorToLowerCase(std::vector<std::string>& book);
 
-//converting a string to lower case the input
-void ConvertStringToLowerCase(std::string& book);
 
 #endif /* BookUtil_hpp */

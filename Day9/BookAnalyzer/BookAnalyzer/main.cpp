@@ -13,14 +13,10 @@
 
 int main(int argc, const char * argv[]) {
 
-
     
-    for (int i = 1; i < argc; i++){
-        if (argc > 1){
-            std::cout << argv[1] << "\n";
-        }
-    }
-
+//    for (int i = 0; i < argc; i++){
+//        std::cout << argv[i];
+//    }
     
 //declaring a vector of strings called "Book"
     std::vector <std::string> bookVector;
@@ -34,6 +30,12 @@ int main(int argc, const char * argv[]) {
 //calling a ifstream myBook and opening "bookpractice.txt"
    std::ifstream myBook( userBook );
   
+    //an if statement fail the program if the file inputted is invalid
+    if (myBook.fail()){
+        std::cout << "Failed to open file.\n";
+        exit(1);
+    }
+    
   //declaring a string called word1 to store and push back into vector
     std::string word1;
     

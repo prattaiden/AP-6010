@@ -102,20 +102,15 @@ void findLargeWord(std::vector<std::string> book){
     std::cout << "largest word: " << largeWord << "\n";
 }
 
+//nested loop that would convert the book to all lowercase
+//void ConvertVectorToLowerCase(std::vector<std::string>& book){
+//    for(int i = 0; i <book.size(); i++){
+//        for (int j = 0; j < book[i].length(); j++){
+//            book[i][j] = tolower(book[i][j]);
+//        }
+//    }
+//}
 
-void ConvertVectorToLowerCase(std::vector<std::string>& book){
-    for(int i = 0; i <book.size(); i++){
-        for (int j = 0; j < book[i].length(); j++){
-            book[i][j] = tolower(book[i][j]);
-        }
-    }
-}
-
-void ConvertStringToLowerCase(std::string& book){
-    for(int i = 0; i <book.size(); i++){
-        book[i] = tolower(book[i]);
-        }
-    }
 
 //find the Keywords
 //walk me through this
