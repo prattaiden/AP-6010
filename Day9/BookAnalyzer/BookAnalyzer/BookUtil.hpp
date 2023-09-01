@@ -11,6 +11,8 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
+#include <cstring>
+
 
 //function to print the title
 void printTheTitle(std::vector <std::string> titleOfBook);
@@ -33,8 +35,13 @@ void findLargeWord(std::vector<std::string> book);
 //function to find an inputed key word
 void findKeywordOccurrences(const std::vector<std::string>& book, const std::string& keyword);
 
+//function for location, percentage, and adjacent words
+void getLocationPercentageAndAdjacentWords(const std::vector<std::string>& book, const std::string& keyword);
+ 
+//converting the book to lowercase for the key word search
+void ConvertVectorToLowerCase(std::vector<std::string>& book);
 
-
-
+//converting a string to lower case the input
+void ConvertStringToLowerCase(std::string& book);
 
 #endif /* BookUtil_hpp */

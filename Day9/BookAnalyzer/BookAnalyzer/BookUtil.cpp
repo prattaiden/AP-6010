@@ -10,6 +10,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 
 
@@ -49,7 +50,7 @@ void printTheTitle(std::vector <std::string> titleOfBook){
 int findReleaseDate(std::vector<std::string> releaseDate){
     int positionRelease = -1;
     
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < 1000; i++){
         if (releaseDate[i] == "Release"){
             positionRelease = i;
         }
@@ -102,20 +103,64 @@ void findLargeWord(std::vector<std::string> book){
 }
 
 
+void ConvertVectorToLowerCase(std::vector<std::string>& book){
+    for(int i = 0; i <book.size(); i++){
+        for (int j = 0; j < book[i].length(); j++){
+            book[i][j] = tolower(book[i][j]);
+        }
+    }
+}
+
+void ConvertStringToLowerCase(std::string& book){
+    for(int i = 0; i <book.size(); i++){
+        book[i] = tolower(book[i]);
+        }
+    }
+
 //find the Keywords
 //walk me through this
 void findKeywordOccurrences(const std::vector<std::string>& book, const std::string& keyword) {
     int keywordCounter = 0;
-    
-    for (int i = 0; i < book.size(); ++i) {
+    for (int i = 0; i < book.size(); i++) {
         if (book[i] == keyword) {
             keywordCounter++;
         }
     }
+   
     
     std::cout << "The word " << "\"" << keyword << "\" appears " << keywordCounter << " times." << std::endl;
     
 }
 
+
 //find a specific string, percentage it occurs, and adjacent letters
 
+// Function to calculate location percentage, and print context
+void getLocationPercentageAndAdjacentWords(const std::vector<std::string>& book, const std::string& keyword){
+    for (int i = 0; i < book.size(); ++i){
+        if (book[i] == keyword) {
+            
+            // Calculate the location percentage
+            double locationPercentage = ( ( double (i) / book.size()  ) * 100);
+            
+            // Print the location percentage
+            std::cout << "at " << locationPercentage << "% ";
+            
+            // If the current index is greater than 0, print the previous word
+            if (i > 0) {
+            std::cout << "\"" << book[i - 1] << " ";
+            }
+            
+            // Print the keyword
+            std::cout << keyword;
+            
+            // If the current index is less than the last index, print the next word
+            if (i < book.size() - 1) {
+                std::cout << " " << book[i + 1];
+            }
+            // Print the closing quote and newline
+            std::cout << "\"" << std::endl;
+        }
+    }
+    
+}

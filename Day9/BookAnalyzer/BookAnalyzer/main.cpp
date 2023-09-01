@@ -13,11 +13,26 @@
 
 int main(int argc, const char * argv[]) {
 
+
+    
+    for (int i = 1; i < argc; i++){
+        if (argc > 1){
+            std::cout << argv[1] << "\n";
+        }
+    }
+
+    
 //declaring a vector of strings called "Book"
     std::vector <std::string> bookVector;
     
+    
+    std::string userBook;
+    std::cout << "Enter a .txt file for a book: ";
+    std::cin >> userBook;
+    
+    
 //calling a ifstream myBook and opening "bookpractice.txt"
-   std::ifstream myBook( "bookpractice.txt" );
+   std::ifstream myBook( userBook );
   
   //declaring a string called word1 to store and push back into vector
     std::string word1;
@@ -28,8 +43,11 @@ int main(int argc, const char * argv[]) {
        bookVector.push_back(word1);
    }
     
+    std::cout << "Title: ";
     //Printing the title of the book
     printTheTitle(bookVector);
+    
+    std::cout << "\nAuthor: ";
     
     //printing the author of the book
     printTheAuthor(bookVector);
@@ -40,9 +58,7 @@ int main(int argc, const char * argv[]) {
     //printing the largest word in the book
     findLargeWord(bookVector);
     
-    //figure out why release date wont print
-    //RELEASE DATE wont print
-    // findReleaseDate(bookVector);
+    
     
     //printing the number of characters in the book
     std::cout << "character count: " << getNumberOfCharacters(bookVector);
@@ -50,9 +66,21 @@ int main(int argc, const char * argv[]) {
     //printing the word count of the book
     std::cout << "\nword count: " << bookVector.size() << "\n";
     
+
     
     
     
+    //converting the book to lowercase 
+    //ConvertVectorToLowerCase(bookVector);
+    
+    //find key words
+    std::string input;
+    std::cout << "enter a key word: ";
+    std::cin >> input;
+    findKeywordOccurrences(bookVector, input);
+
+    
+    getLocationPercentageAndAdjacentWords(bookVector, input);
     
     return 0;
 }

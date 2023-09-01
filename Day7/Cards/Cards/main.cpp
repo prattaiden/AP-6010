@@ -19,6 +19,15 @@
 
 int main(int argc, const char * argv[]) {
 
+    //prints a deck of cards in order
+    printDeck(creatingDeckOfCards());
+    //new vector that will take the deck of cards and save it in the card data type
+    std::vector<Card> shuffledDeck = creatingDeckOfCards();
+    //function to take this caard data type and suffle it
+    shuffleTheDeck(shuffledDeck);
+    //printing that newly shuffled deck of cards
+    printDeck(shuffledDeck);
+    
     //time?
     srand(time(0));
    //counters
@@ -47,15 +56,15 @@ int main(int argc, const char * argv[]) {
         countRoyalFlush(isItRoyalFlush(getFiveCards(DeckofFiftyTwo)), counterRoyalFlush);
     }
 
-    std::cout << "Straight count: " << ((counterStraights*1.0)/1000000)*100 << "%\n";
+    std::cout << "Straight count: " << counterStraights << " Straight percentage: " << ((counterStraights*1.0)/1000000)*100 << "%\n";
     //sometimes this will give 1 but most the times it is 0. probablity does not seem right. gave 5 when i did 10,000
-    std::cout << "Flush count: " << ((counterFlushes*1.0)/1000000)*100 << "%\n";
+    std::cout << "Flush count: " << counterFlushes << " Flush percentage: " << ((counterFlushes*1.0)/1000000)*100 << "%\n";
 
-    std::cout << "Straight Flush count: " << ((counterStraightFlushes*1.0)/1000000)*100 << "%\n";
+    std::cout << "Straight Flush count: " << counterStraightFlushes << " StraightFlush percentage: " << ((counterStraightFlushes*1.0)/1000000)*100 << "%\n";
 
-    std::cout << "Full House count: " << ((counterFullHouses*1.0)/1000000)*100 << "%\n";
+    std::cout << "Full House count: " << counterFullHouses << " FullHouse percentage: " << ((counterFullHouses*1.0)/1000000)*100 << "%\n";
 
-    std::cout << "Royal Flush count: " << ((counterRoyalFlush*1.0)/1000000)*100 << "%\n";
+    std::cout << "Royal Flush count: " << counterRoyalFlush << " RoyalFlush percentage: " << ((counterRoyalFlush*1.0)/1000000)*100 << "%\n";
     
     
     //to do tests:
@@ -91,7 +100,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> straightFlushDeck{f1, f2, f3, f4, f5};
     
-    isItStraightFlush(straightFlushDeck);
+    //isItStraightFlush(straightFlushDeck);
     
     //test vector for royal flush deck of 5
     Card r1 = {10, "Hearts"};
@@ -102,7 +111,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> royalFlushDeck{r1, r2, r3, r4, r5};
     
-    isItRoyalFlush(royalFlushDeck);
+    //isItRoyalFlush(royalFlushDeck);
                    
     //test vector for full house deck of 5
     Card a1 = {13, "Hearts"};
@@ -113,7 +122,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> fullHouseDeck{a1, a2, a3, a4, a5};
     
-    isItFullHouse(fullHouseDeck);
+    //isItFullHouse(fullHouseDeck);
     
     
     return 0;
