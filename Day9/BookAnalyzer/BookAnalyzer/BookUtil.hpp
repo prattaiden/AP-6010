@@ -42,4 +42,5 @@ void getLocationPercentageAndAdjacentWords(const std::vector<std::string>& book,
 void ConvertVectorToLowerCase(std::vector<std::string>& book);
 
 
+
 #endif /* BookUtil_hpp */

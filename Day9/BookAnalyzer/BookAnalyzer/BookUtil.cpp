@@ -102,18 +102,8 @@ void findLargeWord(std::vector<std::string> book){
     std::cout << "largest word: " << largeWord << "\n";
 }
 
-//nested loop that would convert the book to all lowercase
-//void ConvertVectorToLowerCase(std::vector<std::string>& book){
-//    for(int i = 0; i <book.size(); i++){
-//        for (int j = 0; j < book[i].length(); j++){
-//            book[i][j] = tolower(book[i][j]);
-//        }
-//    }
-//}
-
 
 //find the Keywords
-//walk me through this
 void findKeywordOccurrences(const std::vector<std::string>& book, const std::string& keyword) {
     int keywordCounter = 0;
     for (int i = 0; i < book.size(); i++) {
@@ -121,7 +111,6 @@ void findKeywordOccurrences(const std::vector<std::string>& book, const std::str
             keywordCounter++;
         }
     }
-   
     
     std::cout << "The word " << "\"" << keyword << "\" appears " << keywordCounter << " times." << std::endl;
     

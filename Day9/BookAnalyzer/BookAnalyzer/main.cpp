@@ -14,10 +14,6 @@
 int main(int argc, const char * argv[]) {
 
     
-//    for (int i = 0; i < argc; i++){
-//        std::cout << argv[i];
-//    }
-    
 //declaring a vector of strings called "Book"
     std::vector <std::string> bookVector;
     
@@ -43,7 +39,11 @@ int main(int argc, const char * argv[]) {
    while( myBook >> word1 ) {
 //pushing back the word1 string into the vectore of strings
        bookVector.push_back(word1);
+       //clear the file stream
+//       bookVector.clear();
+//       //bookVector.seekg(0,std::ios::beg);
    }
+
     
     std::cout << "Title: ";
     //Printing the title of the book
@@ -83,6 +83,8 @@ int main(int argc, const char * argv[]) {
 
     
     getLocationPercentageAndAdjacentWords(bookVector, input);
+    
+
     
     return 0;
 }
