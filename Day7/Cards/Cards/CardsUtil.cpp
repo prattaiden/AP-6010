@@ -10,13 +10,13 @@
 
 //creating a vector as data type "Card" and calling it creatingDeckOfCards
 //setting another vector of data type "Card" calling it "returnDeck". this will be saved as a vector of the cards and the returned at the end of the function
-//creating a string called suit with 4 strings in it (array?)
+//creating a string called suit with 4 strings in it
 //for each loop which will have string "s" cycle through the suit [4] array and save each position as the suit of cards
 //within each suit of cards, another for loop runs through 1 - 13 which updates the rank of the card.
 //the function then pushses back each suit + rank of struct "newcard" into returnDeck.
 std::vector<Card> creatingDeckOfCards(){
     std::vector<Card> returnDeck;
-    std::string suit[4] {"Clubs " , "Diamonds " , "Spades " , "Hearts "};
+    std::string suit[4] {"Clubs" , "Diamonds" , "Spades" , "Hearts"};
     for (std::string s: suit){
         for (int j = 1; j <= 13; j++){
             Card newcard;
@@ -45,6 +45,7 @@ void printDeck(std::vector<Card> DeckofFiftyTwo){
         else if (c.rank == 13){
             std::cout << "King of ";
         }
+        //else statement to print the rank of Card
         else{
             std::cout << c.rank << " of ";
         }

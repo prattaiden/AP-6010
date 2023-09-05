@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     
     
     std::string userBook;
-    std::cout << "Enter a .txt file for a book: ";
+    std::cout << "Enter a .txt file path for a book: ";
     std::cin >> userBook;
     
     

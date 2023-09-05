@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     //function to take this caard data type and suffle it
     shuffleTheDeck(shuffledDeck);
     //printing that newly shuffled deck of cards
-    printDeck(shuffledDeck);
+    //printDeck(shuffledDeck);
     
     //time?
     srand(time(0));
@@ -56,15 +56,15 @@ int main(int argc, const char * argv[]) {
         countRoyalFlush(isItRoyalFlush(getFiveCards(DeckofFiftyTwo)), counterRoyalFlush);
     }
 
-    std::cout << "Straight count: " << counterStraights << " Straight percentage: " << ((counterStraights*1.0)/1000000)*100 << "%\n";
+    std::cout << "Straight count: " << counterStraights << ". Straight percentage: " << ((counterStraights*1.0)/1000000)*100 << "%\n";
     //sometimes this will give 1 but most the times it is 0. probablity does not seem right. gave 5 when i did 10,000
-    std::cout << "Flush count: " << counterFlushes << " Flush percentage: " << ((counterFlushes*1.0)/1000000)*100 << "%\n";
+    std::cout << "Flush count: " << counterFlushes << ". Flush percentage: " << ((counterFlushes*1.0)/1000000)*100 << "%\n";
 
-    std::cout << "Straight Flush count: " << counterStraightFlushes << " StraightFlush percentage: " << ((counterStraightFlushes*1.0)/1000000)*100 << "%\n";
+    std::cout << "Straight Flush count: " << counterStraightFlushes << ". StraightFlush percentage: " << ((counterStraightFlushes*1.0)/1000000)*100 << "%\n";
 
-    std::cout << "Full House count: " << counterFullHouses << " FullHouse percentage: " << ((counterFullHouses*1.0)/1000000)*100 << "%\n";
+    std::cout << "Full House count: " << counterFullHouses << ". FullHouse percentage: " << ((counterFullHouses*1.0)/1000000)*100 << "%\n";
 
-    std::cout << "Royal Flush count: " << counterRoyalFlush << " RoyalFlush percentage: " << ((counterRoyalFlush*1.0)/1000000)*100 << "%\n";
+    std::cout << "Royal Flush count: " << counterRoyalFlush << ". RoyalFlush percentage: " << ((counterRoyalFlush*1.0)/1000000)*100 << "%\n";
     
     
     //to do tests:

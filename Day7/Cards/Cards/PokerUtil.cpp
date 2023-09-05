@@ -34,7 +34,6 @@ std::vector<Card> getFiveCards (std::vector<Card> topFiveCards){
         Card c1 = topFiveCards[i];
         cards.push_back(c1);
     }
-//    std::vector<int> sorted = sortRank(topFiveCards);
     
     return cards;
 }
