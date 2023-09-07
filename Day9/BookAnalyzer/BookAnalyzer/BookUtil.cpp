@@ -18,6 +18,7 @@
 //find the title function
 int findTitle(std::vector<std::string> bookTitle){
     int titlePosition = 0;
+    //for loop to look for the title intro
     for (int i = 0; i < bookTitle.size() ; i++){
         if (bookTitle[i] == "Title:"){
             titlePosition = i;
@@ -29,6 +30,7 @@ int findTitle(std::vector<std::string> bookTitle){
 //find the author function
 int findAuthor(std::vector<std::string> bookAuthor){
     int authorPosition = 0;
+    //for loop to look for the author
     for (int i = 0; i < bookAuthor.size(); i ++){
         if (bookAuthor[i] == "Author:"){
             authorPosition = i;
@@ -40,6 +42,8 @@ int findAuthor(std::vector<std::string> bookAuthor){
 
 //printing title function
 void printTheTitle(std::vector <std::string> titleOfBook){
+    
+    //for loop to print from the title until the key word of author is hit
     for (int i = findTitle(titleOfBook) + 1;i< findAuthor(titleOfBook); i++){
         std::cout << titleOfBook[i] << " ";
     }
@@ -60,6 +64,7 @@ int findReleaseDate(std::vector<std::string> releaseDate){
 
 //printing author
 void printTheAuthor(std::vector<std::string> theBook){
+    //if Author: does not exist in this range, author is not found
     if (findAuthor(theBook) == -1 || findReleaseDate(theBook) == -1){
             std::cout << "unknown\n";
     }
@@ -83,6 +88,9 @@ int getNumberOfCharacters(std::vector<std::string> Book){
 //find the smallest word function
 void findSmallWord(std::vector<std::string> book){
     std::string smallWord = book[0];
+    //sets a string called small word to the first word in the book string
+    //if the length of that string is less than a word its compared to
+    //small word is set to the new word
     for (int i = 1; i < book.size(); i++){
         if(book[i].length() < smallWord.length()){
             smallWord = book[i]; //setting smaller word

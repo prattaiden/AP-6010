@@ -40,8 +40,7 @@ int main(int argc, const char * argv[]) {
 //pushing back the word1 string into the vectore of strings
        bookVector.push_back(word1);
        //clear the file stream
-//       bookVector.clear();
-//       //bookVector.seekg(0,std::ios::beg);
+       bookVector.clear();
    }
 
     
@@ -67,10 +66,6 @@ int main(int argc, const char * argv[]) {
     
     //printing the word count of the book
     std::cout << "\nword count: " << bookVector.size() << "\n";
-    
-
-    
-    
     
     //converting the book to lowercase 
     //ConvertVectorToLowerCase(bookVector);

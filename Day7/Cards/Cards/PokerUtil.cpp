@@ -27,6 +27,7 @@ void shuffleTheDeck (std::vector <Card>& newDeckOfCards){
     }
 }
 //get5 cards
+//makes a new vector from the sorted cards
 std::vector<Card> getFiveCards (std::vector<Card> topFiveCards){
     std::vector<Card> cards;
     for (int i = 0 ; i < 5; i++){
@@ -111,6 +112,8 @@ int countRoyalFlush (bool royalFlushCount , int& counterRoyalFlush){
 
 
 //FLUSH bool and void to check if it is a flush
+//for loop that looks at the suit of position i-i and compares it to i
+//if they are not equal returns false, else returns true
 bool isItFlush (std::vector<Card> flushDeck){
     for(int i = 1; i<5; i++){
         if (flushDeck[i-1].suit != flushDeck[i].suit){
@@ -121,6 +124,8 @@ bool isItFlush (std::vector<Card> flushDeck){
 }
 
 //STRAIGHT bool to check if it is a straight
+//for loop to compare i-1 of the sorted hand and i of the sorted hand
+//if [i-1] + 1 does not equal i, then it returns false, not meeting straight conditions
 bool isItStraight (std::vector<Card> straightDeck){
     std::vector<int> handSort = sortRank(straightDeck);
     
@@ -133,6 +138,8 @@ bool isItStraight (std::vector<Card> straightDeck){
 }
 
 //straightflush bool
+//taking the functions from is it a straight and is it a flush
+//if they are both true, then it returns true
 bool isItStraightFlush (std::vector<Card> straightFlushDeck){
     if(isItStraight(straightFlushDeck) && (isItFlush(straightFlushDeck))){
         return true;
@@ -143,10 +150,12 @@ bool isItStraightFlush (std::vector<Card> straightFlushDeck){
 }
 
 //royalflush test
-
+//
 bool isItRoyalFlush (std::vector<Card> royalFlushDeck){
     //sortRank(royalFlushDeck);
     std::vector<int> sorted = sortRank(royalFlushDeck);
+    /*this if statement checks if there is a striaght flush from the abovec function.
+     it then checks if the lowest rank is 10 and the highest rank is 14. if this is true then it means there is a royal flush*/
     if(isItStraightFlush(royalFlushDeck) && sorted[0] == 10 && sorted[4] == 14){
 
             return true;
@@ -160,7 +169,7 @@ bool isItFullHouse (std::vector<Card> fullHouseDeck){
     //declaring variables to count how many times a card in the hand is equal to the next card
     int secondCardRank = 0;
     int firstCardRank = fullHouseDeck[0].rank;
-    
+    /*this for loop iterates through the size of the full house starting with the second card in the hand. it checks if the rank of the second card is not equal to the first card in the hand. If that is true, the variable seconddCardRank is set to equal the rank of that position in the deck */
     for (int i = 1; i < fullHouseDeck.size(); i ++){
         if (fullHouseDeck[i].rank != firstCardRank){
             secondCardRank = fullHouseDeck[i].rank;
@@ -168,6 +177,7 @@ bool isItFullHouse (std::vector<Card> fullHouseDeck){
     }
     int cardCounterTwo = 0;
     int cardCounterOne = 0;
+    
     for (int i = 0; i <fullHouseDeck.size(); i++){
         if (firstCardRank == fullHouseDeck[i].rank){
             cardCounterOne++;
@@ -177,7 +187,7 @@ bool isItFullHouse (std::vector<Card> fullHouseDeck){
         }
     }
     
-    
+    //checking if the counters suits equal to 3 and 2. if so it is a full house
     if ((cardCounterOne == 3 && cardCounterTwo == 2)|| (cardCounterOne == 2 && cardCounterTwo == 3)){
             return true;
         }

@@ -16,6 +16,8 @@
 #include "CardsUtil.hpp"
 #include "PokerUtil.hpp"
 #include <vector>
+#include <cassert>
+
 
 int main(int argc, const char * argv[]) {
 
@@ -78,6 +80,7 @@ int main(int argc, const char * argv[]) {
     
     std::vector<Card> flushDeck{c1, c2, c3, c4, c5};
     
+    //test
     //isItFlush(flushDeck);
     
     //test vector deck for straight
@@ -88,7 +91,9 @@ int main(int argc, const char * argv[]) {
     Card s5 = {8, "Spades"};
     
     std::vector<Card> straightDeck{s1, s2, s3, s4, s5};
+    assert(isItFlush(straightDeck) && "Deck should be a straight.");
     
+    //test
     //isItStraight(straightDeck);
    
     //test vector for straight flush deck of 5

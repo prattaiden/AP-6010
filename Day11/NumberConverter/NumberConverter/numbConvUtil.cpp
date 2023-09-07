@@ -35,13 +35,14 @@ int getNumFromChar(char& c){
 int stringToInt(std::string input, int base){
     //string for base 10 to integer when the user inputs a DECIMAL
     int sign = 1;
+    
     if(isItNegative(input)){
         sign = -1;
         input=input.substr(1);
     }
     
     if (base == 10){
-        return std::stoi(input);
+        return std::stoi(input) * sign;
     }
     //string base 2 to integer when the user inputs a BINARY
     else if (base == 2){
