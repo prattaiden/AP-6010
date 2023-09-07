@@ -6,10 +6,8 @@
 //
 
 #include "NumberFunc.hpp"
-#include <cmath>
 #include <iostream>
 #include <fstream>
-#include <ctype.h>
 
 
 //this function is adding the double variables a and b and checking if they are greater than a preset double tollerance
@@ -23,8 +21,10 @@ bool approxEquals (double a, double b, double tollerance){
 }
 
 
+
+
 //function to print the characters from the file
-void printChars (std::ifstream File){
+void printChars (std::ifstream& File){
     char c;
     while(File >> c){
         std::cout << c << "\n";
@@ -36,7 +36,7 @@ void printChars (std::ifstream File){
 
 
 //function to count ascii Characters
-void asUnCounter (std::ifstream File){
+void asUnCounter (std::ifstream& File){
     int ASCIICounter = 0;
     int UnicodeCounter = 0;
     char c;

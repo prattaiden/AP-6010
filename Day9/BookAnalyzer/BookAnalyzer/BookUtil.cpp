@@ -114,6 +114,8 @@ void findLargeWord(std::vector<std::string> book){
 //find the Keywords
 void findKeywordOccurrences(const std::vector<std::string>& book, const std::string& keyword) {
     int keywordCounter = 0;
+    //for loop to look for the user entered key word in book[i]
+    //counter adds when it is found
     for (int i = 0; i < book.size(); i++) {
         if (book[i] == keyword) {
             keywordCounter++;

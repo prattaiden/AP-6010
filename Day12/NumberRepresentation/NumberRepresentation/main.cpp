@@ -6,11 +6,6 @@
 //
 
 #include <iostream>
-#include <cstdint>
-#include <cassert>
-#include <iomanip>
-#include <cmath>
-#include <fstream>
 #include "NumberFunc.hpp"
 
 int main(int argc, const char * argv[]) {
@@ -84,7 +79,6 @@ int main(int argc, const char * argv[]) {
     std::cout << "\n\nPART 3\n\n";
     
     
-
     
     //to open the file
     std::ifstream openTestFile("UTF-8-demo.txt");
@@ -102,10 +96,11 @@ int main(int argc, const char * argv[]) {
 //        fileOpen.push_back(c);
 //    }
     
+    
+    //print characters and count
     printChars(openTestFile);
-    
     asUnCounter(openTestFile);
-    
+
 
     
     

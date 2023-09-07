@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
     
     
 //calling a ifstream myBook and opening "bookpractice.txt"
-   std::ifstream myBook( userBook );
+   std::ifstream myBook(userBook);
   
     //an if statement fail the program if the file inputted is invalid
     if (myBook.fail()){
