@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F41A8EAD2AA8F713001EA9F8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F41A8EAC2AA8F713001EA9F8 /* main.cpp */; };
+		F41A8EBB2AA9031F001EA9F8 /* NumberFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F41A8EB92AA9031F001EA9F8 /* NumberFunc.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F41A8EA92AA8F713001EA9F8 /* NumberRepresentation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NumberRepresentation; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41A8EAC2AA8F713001EA9F8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F41A8EB92AA9031F001EA9F8 /* NumberFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NumberFunc.cpp; sourceTree = "<group>"; };
+		F41A8EBA2AA9031F001EA9F8 /* NumberFunc.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NumberFunc.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				F41A8EAC2AA8F713001EA9F8 /* main.cpp */,
+				F41A8EB92AA9031F001EA9F8 /* NumberFunc.cpp */,
+				F41A8EBA2AA9031F001EA9F8 /* NumberFunc.hpp */,
 			);
 			path = NumberRepresentation;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41A8EBB2AA9031F001EA9F8 /* NumberFunc.cpp in Sources */,
 				F41A8EAD2AA8F713001EA9F8 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
