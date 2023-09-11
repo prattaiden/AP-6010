@@ -41,8 +41,13 @@ int findAuthor(std::vector<std::string> bookAuthor){
 
 
 //printing title function
-void printTheTitle(std::vector <std::string> titleOfBook){
+void printTheTitle(std::vector<std::string> titleOfBook){
+    std::cout << "Title: ";
     
+    if( findTitle(titleOfBook) == -1)
+    {
+        std::cout << "Unknown";
+    }
     //for loop to print from the title until the key word of author is hit
     for (int i = findTitle(titleOfBook) + 1;i< findAuthor(titleOfBook); i++){
         std::cout << titleOfBook[i] << " ";

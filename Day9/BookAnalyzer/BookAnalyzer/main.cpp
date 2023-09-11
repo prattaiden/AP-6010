@@ -18,13 +18,13 @@ int main(int argc, const char * argv[]) {
     std::vector <std::string> bookVector;
     
     
-    std::string userBook;
-    std::cout << "Enter a .txt file path for a book: ";
-    std::cin >> userBook;
+//    std::string userBook;
+//    std::cout << "Enter a .txt file path for a book: ";
+//    std::cin >> userBook;
     
     
 //calling a ifstream myBook and opening "bookpractice.txt"
-   std::ifstream myBook(userBook);
+   std::ifstream myBook("mobydick.txt");
   
     //an if statement fail the program if the file inputted is invalid
     if (myBook.fail()){
@@ -40,11 +40,9 @@ int main(int argc, const char * argv[]) {
 //pushing back the word1 string into the vectore of strings
        bookVector.push_back(word1);
        //clear the file stream
-       bookVector.clear();
    }
 
     
-    std::cout << "Title: ";
     //Printing the title of the book
     printTheTitle(bookVector);
     
@@ -78,8 +76,7 @@ int main(int argc, const char * argv[]) {
 
     
     getLocationPercentageAndAdjacentWords(bookVector, input);
-    
-
+ 
     
     return 0;
 }
