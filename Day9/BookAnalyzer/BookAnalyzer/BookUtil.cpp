@@ -17,7 +17,7 @@
 
 //find the title function
 int findTitle(std::vector<std::string> bookTitle){
-    int titlePosition = 0;
+    int titlePosition = -1;
     //for loop to look for the title intro
     for (int i = 0; i < bookTitle.size() ; i++){
         if (bookTitle[i] == "Title:"){
@@ -29,7 +29,7 @@ int findTitle(std::vector<std::string> bookTitle){
 
 //find the author function
 int findAuthor(std::vector<std::string> bookAuthor){
-    int authorPosition = 0;
+    int authorPosition = -1;
     //for loop to look for the author
     for (int i = 0; i < bookAuthor.size(); i ++){
         if (bookAuthor[i] == "Author:"){
@@ -81,7 +81,7 @@ void printTheAuthor(std::vector<std::string> theBook){
     std::cout << std::endl;
 }
 
-//finding the number of characters in the string
+//finding the number of characters in the book
 int getNumberOfCharacters(std::vector<std::string> Book){
     int characterCount = 0;
     for (int i = 0; i < Book.size(); i++){
@@ -158,7 +158,7 @@ void getLocationPercentageAndAdjacentWords(const std::vector<std::string>& book,
                 std::cout << " " << book[i + 1];
             }
             // Print the closing quote and newline
-            std::cout << "\"" << std::endl;
+            std::cout << "\"" << "\n";
         }
     }
     

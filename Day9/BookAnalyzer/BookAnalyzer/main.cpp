@@ -18,13 +18,13 @@ int main(int argc, const char * argv[]) {
     std::vector <std::string> bookVector;
     
     
-//    std::string userBook;
-//    std::cout << "Enter a .txt file path for a book: ";
-//    std::cin >> userBook;
+    std::string userBook;
+    std::cout << "Enter a .txt file path for a book: ";
+    std::cin >> userBook;
     
     
 //calling a ifstream myBook and opening "bookpractice.txt"
-   std::ifstream myBook("mobydick.txt");
+   std::ifstream myBook(userBook);
   
     //an if statement fail the program if the file inputted is invalid
     if (myBook.fail()){
@@ -42,6 +42,9 @@ int main(int argc, const char * argv[]) {
        //clear the file stream
    }
 
+
+//calling functions ----
+    
     
     //Printing the title of the book
     printTheTitle(bookVector);
@@ -56,9 +59,7 @@ int main(int argc, const char * argv[]) {
     
     //printing the largest word in the book
     findLargeWord(bookVector);
-    
-    
-    
+
     //printing the number of characters in the book
     std::cout << "character count: " << getNumberOfCharacters(bookVector);
     
