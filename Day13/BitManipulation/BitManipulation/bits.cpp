@@ -270,29 +270,31 @@ int Negate( int input )
 */
 int Increment( int32_t x ){
     
-    //works but not allowed
+    //works but not allowed:
     //x = x + 1;
     
-    //take in x
-    // add one to it
     
-    if (x >= 0){
-        uint32_t a = 0x1;
-        
-        x = (x ^ a);
+    //works but not allowed:
+    //    if (x >= 0){
+    //        uint32_t a = 0x1;
+    //        x = (x ^ a);
+    //    }
+    //
+    //    else if (x < 1111){
+    //        x = x + 1;
+    //    }
+    //
+    //  return x;
+    //}
+    
+    uint32_t mask =0x1;
+    while (x & mask){
+        x = (x ^ mask);
+        mask = mask<<1;
     }
-   
-    else if (x < 1111){
-
-        
-        x = x + 1;
-
-    }
+    return x | mask;
     
-    
-  return x;
 }
-
 
 
 /*************************************************/
