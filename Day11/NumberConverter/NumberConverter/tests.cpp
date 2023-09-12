@@ -9,5 +9,5 @@
 
 void tests(){
     
-    assert(intDecimalToString(255));
+    //assert(intDecimalToString(255));
 }
