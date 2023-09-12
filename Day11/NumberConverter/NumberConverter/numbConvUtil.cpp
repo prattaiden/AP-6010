@@ -119,7 +119,7 @@ std::string intHexToString (int input){
         int remainder = 0;
         char character = '\0';
         //using modulu
-        //dividing the input by 16 and sacing the remainder in int remainder
+        //dividing the input by 16 and saving the re=mainder in int remainder
         remainder = input%16;
         
         //if the remainder is less than 10, then digits 0 to 9 are used
