@@ -40,29 +40,24 @@ void test(){
     assert(vec1.getSize() == 3 && "failed test 4\n");
     
     
-    //TEST 5--------------------------------pop back ----------
+    //TEST 5-----------------------pop back ----------
     //testing pop back and getsize
     vec1.pop_back();
     assert(vec1.getSize() == 2 && "failed test 5\n");
 
     
-    //TEST 6 ------------------------------get capacity----------
+    //TEST 6 --------------------capacity----------
     //testing get capacity
     assert(vec1.getCapacity() == 10 && "failed test 6\n");
     
     
-    //TEST 7 ------------------growth----------------
+    //TEST 7 ------------------growth and capacity----------------
+   //testing that capacity is updated and doubled with the vector is grown
     vec1.gotGrowth();
     assert(vec1.getCapacity() == 20 && "failed test 7\n");
     
-    vec1.printVector();
-    
-    //TEST 8---------------------free vector-----------------
-//    vec1.freeVector();
-//    assert(vec1.getCapacity() == 0 && vec1.getSize() == 0 && "failed test 8\n");
-    
  
-    //TEST 9 -------------------------operators--------------
+    //TEST 8 -------------------------operators--------------
     myVector vec2 (10);
     vec2.push_back(5);
     vec2.push_back(3);
@@ -72,26 +67,58 @@ void test(){
     
     
 
-    //TEST 10 --------------------------copy constructor----------
+    //TEST 9 --------------------------copy constructor----------
     //make a copy through this constructor
-   // myVector vec3(10);
     //testing if vec 3 is now == to vec 2
     //and testing the == operator
     myVector vec3(vec2);
-    assert(vec3 == vec2 && "fail test 10\n");
+    assert(vec3 == vec2 && "failed test 9\n");
     
-
-    //TEST 11 --------------------------- != operator---------------
+    
+    //TEST 10 ---------------------- != operator---------------
    
     
+    vec3.push_back(4);
+    assert(vec3 != vec2 && "failed test 10\n");
+
     
-    std::cout << "\npassed tests\n";
+    //Test 11 ----------------tests for math operators----------
+    
+    //creating two vectors to be used for math operator tests
+    myVector vec4 (6);
+    vec4.push_back(4);
+    vec4.push_back(3);
+    vec4.push_back(0);
+    vec4.push_back(2);
+    vec4.push_back(5);
+    vec4.push_back(9);
     
     
-    //TEST 12--------------------------destructor--------------
+    myVector vec5 (6);
+    vec5.push_back(4);
+    vec5.push_back(3);
+    vec5.push_back(1);
+    vec5.push_back(2);
+    vec5.push_back(5);
+    vec5.push_back(9);
     
+    //test if vec4 is less than < vec5
+    assert((vec4 < vec5) && (vec5 > vec4) && (vec4 <= vec5) && (vec5 >= vec4) && "failed test 11");
+
+    //Test 12 ------------------ test for [] operators -----------
     
+    //std::cout << "\n";
+   // vec3.printVector();
+    //[]&
+    vec3[1] = 69;
+    //std::cout << "\n";
+   // vec3.printVector();
+    int index1 = vec3[1];
     
+    assert(index1 = 69 && "failed test 12\n");
+           
+    
+    std::cout << "passed all tests\n";
 }
 
 

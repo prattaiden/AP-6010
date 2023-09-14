@@ -16,7 +16,7 @@ myVector::myVector (size_t initialCapacity){
     size_ = 0;
     data_ = new int[capacity_];
 
-    std::cout << "created a capacity vector\n";
+    std::cout << "created a vector\n";
 }
 
 //cunstructor for an empty vector
@@ -26,7 +26,7 @@ myVector::myVector(){
     
     data_ = new int [capacity_];
 
-    std::cout << "created empty vector";
+   
 }
 
 
@@ -39,7 +39,7 @@ myVector::~myVector(){
     data_ = nullptr;
     assert(data_ == nullptr);
     
-    std::cout << "destroyed\n";
+    std::cout << "destroyed a vector \n";
 }
 
 //copy constructor
@@ -50,7 +50,7 @@ myVector::myVector(const myVector& rhs){
         capacity_ = rhs.getCapacity();
         data_ = new int [capacity_];
             for(size_t i = 0; i < rhs.getSize(); i++){
-                data_[i] = rhs.get(i);
+                data_[i] = rhs[i];
         }
     }
 }
@@ -59,7 +59,7 @@ myVector::myVector(const myVector& rhs){
 //-------------------methods and operators--------------
 //pushback function
 void myVector::push_back(int val){
-    //if the capacity is only 1 great than the size
+    //if the capacity is only 1 greater than the size
     if (size_+1 >= capacity_){
         //want to grow the vector function
         growVector();
@@ -139,7 +139,7 @@ void function(){
 //-----print the vector method -----------------
 void myVector::printVector() const{
     for(size_t i = 0; i < size_; i++){
-        std::cout << "\n" << data_[i] << " ";
+        std::cout << data_[i] << " ";
     }
 }
 
@@ -148,11 +148,11 @@ void myVector::printVector() const{
 
 //--------------------------operator += ------------------
 
-myVector& myVector::operator+=(const myVector& rhs){
     
+myVector& myVector::operator+=(const myVector& rhs){
+    //loops through the size of rhs and concatinates on
     for(size_t i = 0; i < rhs.getSize(); i++){
-        push_back(rhs.get(i));
-        //return *this;
+        push_back(rhs[i]);
     }
     return *this;
 }
@@ -171,7 +171,7 @@ bool myVector::operator==(const myVector& rhs)const{
         
         for(size_t i = 0; i <rhs.getSize(); i ++){
             //if the value at these indexes do not equal, false
-            if(this->get(i) != rhs.get(i)){
+            if(this->get(i) != rhs[i]){
                 return false;
             }
             
@@ -182,6 +182,7 @@ bool myVector::operator==(const myVector& rhs)const{
  
 //------------------------operator != ---------------------------
 
+    //the opposite of ==
     bool myVector::operator!=(const myVector& rhs)const{
         return (! operator==(rhs));
         
@@ -220,7 +221,7 @@ bool operator<(const myVector& lhs, const myVector& rhs) {
     } else {
         // If the sizes are equal, compare individual elements
         for (size_t i = 0; i < lhs.getSize(); ++i) {
-            if (lhs.get(i) < rhs.get(i)) {
+            if (lhs[i] < rhs[i]) {
                 return true;
             } else if (lhs.get(i) > rhs.get(i)) {
                 return false;
@@ -234,15 +235,17 @@ bool operator<(const myVector& lhs, const myVector& rhs) {
 // > operator
 
 bool operator> (const myVector& lhs, const myVector& rhs){
+    //return the opposite of above < function
     return !(operator<(lhs, rhs));
 }
 
 // <= operator
+    //return less than function or if the operators or equal
 bool operator<=(const myVector& lhs, const myVector& rhs) {
     return operator<(lhs, rhs) || lhs.operator==(rhs);
 }
 
 // >= operator
 bool operator>=(const myVector& lhs, const myVector& rhs) {
-    return !(operator<(lhs, rhs)) || lhs.operator==(rhs);
+    return (operator>(lhs, rhs)) || lhs.operator==(rhs);
 }
