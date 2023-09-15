@@ -37,17 +37,15 @@ using std::string;
  */
 bool GetBit( uint32_t input, int b )
 {
-  // TODO: Fill in. Do not return false.
     //creating a unint32 variable
     //a is a uint32 0...01 now it takes this and left shifts a to the b position
     //this moves the one b number of spaces -1 because the bit count starts at pos 0
     uint32_t a = 1 << (b);
     //this is then used withh & which compares the two unint32s - a and input
     //& only returns 1 if both compared uints have 1
-    if((a & input) > 0){
-        return true;
-    }
-  return false;
+    
+    return (a & input) > 0;
+    
 }
 
 
@@ -252,14 +250,6 @@ uint32_t SetByte( uint32_t input, uint8_t value, int b )
  *   Negate(5) -> returns -5
  *   Negate(-1) -> returns 1
  */
-int Negate( int input )
-{
-    //the negation of an interger is changing its sign
-    //flip the bits and add 1
-    input = (~input) + 1;
-
-  return input;
-}
 
 
 /*
@@ -270,22 +260,6 @@ int Negate( int input )
 */
 int Increment( int32_t x ){
     
-    //works but not allowed:
-    //x = x + 1;
-    
-    
-    //works but not allowed:
-    //    if (x >= 0){
-    //        uint32_t a = 0x1;
-    //        x = (x ^ a);
-    //    }
-    //
-    //    else if (x < 1111){
-    //        x = x + 1;
-    //    }
-    //
-    //  return x;
-    //}
     
     uint32_t mask =0x1;
     while (x & mask){
@@ -296,6 +270,14 @@ int Increment( int32_t x ){
     
 }
 
+int Negate( int input )
+{
+    //the negation of an interger is changing its sign
+    //flip the bits and add 1
+    input = Increment(~input);
+
+  return input;
+}
 
 /*************************************************/
 /* End bit puzzles. Below are the provided tests. */

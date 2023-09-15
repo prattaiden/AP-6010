@@ -9,10 +9,10 @@
 #define test_hpp
 
 #include <stdio.h>
+#include <string>
 
 
 void test();
-
 
 
 #endif /* test_hpp */

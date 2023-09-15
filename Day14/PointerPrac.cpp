@@ -3,9 +3,12 @@
 
 
 struct myVector {
-  double* data;
+public:
+
   int size;
   int capacity;
+private:
+    double* data;
 };
 
 float arrayModSum(myVector& someVar) {
