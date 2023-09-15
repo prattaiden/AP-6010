@@ -275,23 +275,6 @@ MyVector<T>& MyVector<T>::operator+=(const MyVector& rhs){
 
 }
 
-//-----------------------operator + -----------------FIX------
-
-//template <typename T>
-//MyVector<T>& MyVector<T>::operator+(const MyVector& rhs){
-//    //loops through the size of rhs and concatinates on
-//    MyVector temp;
-//    for(size_t i = 0; i < rhs.getSize(); i++){
-//       // std::cout << "before " << this->get(i) << rhs.data_[i]<< std::endl;
-//        temp = this->get(i) + rhs[i];
-//        //this->set(i, val);
-//        //std::cout << "after" << this->get(i) << rhs.data_[i];
-//    }
-//    
-//    return temp;
-//
-//}
-
 //------------------------operator == ---------------------------------
 
 template <typename T>
