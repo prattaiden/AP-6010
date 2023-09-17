@@ -9,8 +9,10 @@
 #include "NumberFunc.hpp"
 
 int main(int argc, const char * argv[]) {
-    //int a =  sizeof (uint8_t);
-    //std::cout << a << "\n";
+    int a =  sizeof (uint8_t);
+    std::cout << a << "\nchar: " << sizeof(char) << "\nint: " << sizeof(int) << "\nuint32: " << sizeof(uint32_t) << "\nint16_t: " << sizeof(int16_t) << "\n";
+
+    
     
     //variables for 8 bit unsigned
     uint8_t unsignedInt8Min = 0x0;
