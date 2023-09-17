@@ -7,8 +7,10 @@ public:
 
   int size;
   int capacity;
+  double* data;
+
 private:
-    double* data;
+
 };
 
 float arrayModSum(myVector& someVar) {
