@@ -1,0 +1,3 @@
+/Users/aidenpratt/Documents/AP-6010/Day19/xcode/CMakeFiles/testSFML.dir
+/Users/aidenpratt/Documents/AP-6010/Day19/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/aidenpratt/Documents/AP-6010/Day19/xcode/CMakeFiles/ZERO_CHECK.dir
