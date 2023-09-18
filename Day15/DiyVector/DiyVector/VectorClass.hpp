@@ -30,11 +30,6 @@ public:
     //copy constructor
     MyVector(const MyVector& rhs);
     
-
-    //make vector not needed anymore
-    //myVector makeVector(size_t initialCapacity);
-    //free vector not needed anymore
-    //void freeVector();
     void push_back(T val);
     void pop_back();
     T get(size_t pos) const;
@@ -148,7 +143,6 @@ MyVector<T>::~MyVector(){
 template <typename T>
 MyVector<T>::MyVector(const MyVector& rhs){
     if(this != &rhs){
-        //delete[] data_;
         size_ = rhs.getSize();
         capacity_ = rhs.getCapacity();
         data_ = new T [capacity_];
@@ -186,18 +180,12 @@ T MyVector<T>::get(size_t pos) const{
     //ensure the data is pointing at something
     assert(data_ != nullptr);
     
-    //commented out for +=????
-    //assert(pos <= size_);
-    
     return data_[pos];
     }
 
 //set-------------------------------------------
 template <typename T>
 void MyVector<T>::set(size_t pos, T value){
-    
-    //commented out for +=???
-//    assert(pos >= 0 && pos < size_);
     
     data_[pos] = value;
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F48D7D1D2AB4A96100500DC4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F48D7D1C2AB4A96100500DC4 /* main.cpp */; };
+		F48D7D252AB4B11900500DC4 /* Fractionhelp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F48D7D232AB4B11900500DC4 /* Fractionhelp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		F48D7D192AB4A96100500DC4 /* ClassFraction */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ClassFraction; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48D7D1C2AB4A96100500DC4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F48D7D232AB4B11900500DC4 /* Fractionhelp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fractionhelp.cpp; sourceTree = "<group>"; };
+		F48D7D242AB4B11900500DC4 /* Fractionhelp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Fractionhelp.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				F48D7D1C2AB4A96100500DC4 /* main.cpp */,
+				F48D7D232AB4B11900500DC4 /* Fractionhelp.cpp */,
+				F48D7D242AB4B11900500DC4 /* Fractionhelp.hpp */,
 			);
 			path = ClassFraction;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48D7D252AB4B11900500DC4 /* Fractionhelp.cpp in Sources */,
 				F48D7D1D2AB4A96100500DC4 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
