@@ -58,7 +58,7 @@ What's the biggest number you can write using 8 binary digits? What is its value
 255
 binary: 11111111
 hex: ff
-This number is the largest number you can have using 4 bytes
+This number is the largest number you can have using 1 byte
 
 Try counting from 0 to 31 on your fingers using binary. How many fingers do you need?
 Five fingers
