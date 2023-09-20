@@ -8,12 +8,13 @@
 
 #include "test.hpp"
 #include "VectorClass.hpp"
+#include <algorithm>
 
 
 //-----------------------------  TEST FUNCTION -----------------------------//
 void test(){
     
-//---------------------test 2 - 1 (INTEGERS )-------------------------
+    //---------------------test 2 - 1 (INTEGERS )-------------------------
     
     MyVector<int> v1;
     
@@ -40,9 +41,9 @@ void test(){
     v1.push_back(3);
     v1.push_back(1);
     v1.push_back(3);
-    v1.push_back(1);
-    v1.push_back(1);
-
+    v1.push_back(2);
+    v1.push_back(2);
+    
     //TEST 1.4
     //--------------check capacity 2______________________
     //when the size is one less than capacity, capacity is expected to double
@@ -74,11 +75,11 @@ void test(){
     assert(v3 == v4 && "failed test 1.6");
     
     //-----------------print___________________________
-//    v3.printVector();
+    //    v3.printVector();
     
     //TEST 1.7
     //-----------------math operators___________________
-   // updated the int vectors to be used for math operator tests
+    // updated the int vectors to be used for math operator tests
     MyVector<int> v5;
     v5.push_back(4);
     v5.push_back(3);
@@ -86,7 +87,7 @@ void test(){
     v5.push_back(2);
     v5.push_back(5);
     v5.push_back(9);
-   
+    
     MyVector<int> v6;
     v6.push_back(4);
     v6.push_back(3);
@@ -120,7 +121,7 @@ void test(){
     
     
     
-//-------------------------test2 - 2 (STRINGS)---------------------------------------//
+    //-------------------------test2 - 2 (STRINGS)---------------------------------------//
     
     //--------------------declare vector string_____________________
     MyVector<std::string> s1;
@@ -172,9 +173,9 @@ void test(){
     
     
     
-   // s1.printVector();
+    // s1.printVector();
     
-//----------------------test 2 - 3 (CHARS) ------------------------------------
+    //----------------------test 2 - 3 (CHARS) ------------------------------------
     
     //TEST 3.1
     //declare vector char_____________________
@@ -186,18 +187,18 @@ void test(){
     assert(c1.getSize() == c2.getSize() && "failed test 3.1");
     
     //print char______________________________
-  //  c1.printVector();
+    //  c1.printVector();
     
-   // c2.printVector();
+    // c2.printVector();
     
     //+= char ________________________
     c1 += c2;
     
-  //  c1.printVector();
+    //  c1.printVector();
     
     
     
-//---------------------------test 2 - 4 (DOUBLES) -----------------------------
+    //---------------------------test 2 - 4 (DOUBLES) -----------------------------
     
     //TEST 4.1, 4.2, 4.3, 4.4, 4.5
     //declar vector double____________________________
@@ -208,67 +209,119 @@ void test(){
     d1.push_back(2.9);
     d1.push_back(6.0);
     d1.push_back(4.4444);
- 
- 
-     //dub1.printVector();
- 
-     assert(d1[0] == 5.432 && "failed test 4.1");
-     assert(d1[3] == 6.0 && "failed test 4.2");
- 
-     d1.pop_back();
- 
-     assert(d1.getSize() == 4 && "failed test 4.3");
-     assert(d1.getCapacity() == 10 && "failed test 4.4");
- 
-     d1.push_back(5.0);
-     d1.push_back(2.9);
-     d1.push_back(6.0);
-     d1.push_back(4.4444);
-     d1.push_back(5.0);
-     d1.push_back(2.9);
-     d1.push_back(6.0);
-     d1.push_back(4.4444);
- 
-     //the capacity should double because the pushback has set the size to be greater than the old vector,
-     assert(d1.getCapacity() == 20 && "failed test 4.5");
- 
-     MyVector<double>d2;
-
-     d2.push_back(4.3);
-     d2.push_back(6.8);
-
+    
+    
+    //dub1.printVector();
+    
+    assert(d1[0] == 5.432 && "failed test 4.1");
+    assert(d1[3] == 6.0 && "failed test 4.2");
+    
+    d1.pop_back();
+    
+    assert(d1.getSize() == 4 && "failed test 4.3");
+    assert(d1.getCapacity() == 10 && "failed test 4.4");
+    
+    d1.push_back(5.0);
+    d1.push_back(2.9);
+    d1.push_back(6.0);
+    d1.push_back(4.4444);
+    d1.push_back(5.0);
+    d1.push_back(2.9);
+    d1.push_back(6.0);
+    d1.push_back(4.4444);
+    
+    //the capacity should double because the pushback has set the size to be greater than the old vector,
+    assert(d1.getCapacity() == 20 && "failed test 4.5");
+    
+    MyVector<double>d2;
+    
+    d2.push_back(4.3);
+    d2.push_back(6.8);
+    
     //TEST 4.6, 4.7 ,4.8
     //operators__________________________________
-     assert(d2 <= d1 && d1 > d2 && d2 < d1 && d1 >= d2 && "failed test 4.6");
-
-     MyVector<double>d3;
-
-     d3.push_back(4.3);
-     d3.push_back(6.8);
-
-     //this works because the contents of these vectors are exact same
-     //if a double value inside dub3 was slightly different, it would fail
-     assert(d2 == d3 && "failed test 4.7");
-
-     MyVector<double>d4;
-
-     d4.push_back(10.1);
-     d4.push_back(10.1);
-
-     //this is true because the second index in dub 4 is ".1" larger than the second // index in dub3
-     assert(d4 > d3 && "failed test 4.8");
-
-
-     MyVector<double>d5;
+    assert(d2 <= d1 && d1 > d2 && d2 < d1 && d1 >= d2 && "failed test 4.6");
+    
+    MyVector<double>d3;
+    
+    d3.push_back(4.3);
+    d3.push_back(6.8);
+    
+    //this works because the contents of these vectors are exact same
+    //if a double value inside dub3 was slightly different, it would fail
+    assert(d2 == d3 && "failed test 4.7");
+    
+    MyVector<double>d4;
+    
+    d4.push_back(10.1);
+    d4.push_back(10.1);
+    
+    //this is true because the second index in dub 4 is ".1" larger than the second // index in dub3
+    assert(d4 > d3 && "failed test 4.8");
+    
+    
+    MyVector<double>d5;
     
     //+ operator_______________________________
-     //d5 = d4 + d3;
-
-     MyVector<double>d6;
-
-     d6.push_back(14.4);
-     d6.push_back(16.9);
- 
+    //d5 = d4 + d3;
+    
+    MyVector<double>d6;
+    
+    d6.push_back(14.4);
+    d6.push_back(16.9);
+    
+    
+    
+    //test from lab--------------------------------9/19/23
+    
+//    print out the elements in your vector with a for-each loop
+//    sort your vector using std::sort
+//    find the minimum element using std::min_element
+//    sum the vector using std::accumulate
+//    Use std::count_if to count the number of even numbers in a vector. Note this will require passing a function-like-thing as a parameter!
+//    Challenge question: Use std::remove_if and your pop-back function to delete all the even numbers in your vector.
+//
+    MyVector<int> labV;
+    labV.push_back(2);
+    labV.push_back(4);
+    labV.push_back(3);
+    labV.push_back(1);
+    labV.push_back(9);
+    labV.push_back(8);
+    
+    
+    //for each loop
+    for( int x : labV ) {
+        std::cout << x << " "; }
+    
+    //sort
+    std::sort(labV.begin(), labV.end());
+    
+    assert((labV[3] == 4) && "failed at sorting test");
+    
+    for( int x : labV ) {
+        std::cout << "\n" << x << " "; }
+    
+    
+    //min elemenet
+    int* minElement = std::min_element(labV.begin(), labV.end());
+    
+    assert(*minElement == 1 && "failed at min element test");
+    
+    //accumulate
+    //cant find accumulate function?
+    //std::accumulate(d1.begin(), d1.end(), 0);
+    
+    
+    size_t count_even = std::count_if(labV.begin(), labV.end(), [](size_t i){
+        return i % 2 == 0;
+    });
+    assert(count_even == 3 && "failed count even test");
+    
+    //
+    //size_t remove_even = std::remove_if(labV.begin(), labV.end(), [](size_t i){
+        
+    //});
     
     
 //---------------------------ALL TESTS PASS-------------------------

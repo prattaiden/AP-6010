@@ -65,7 +65,12 @@ public:
     
     const T& operator[] (size_t index) const;
     
-
+    //------adding from the lab-------------
+    
+    T* begin() { return data_; }
+    T* end() { return data_ + size_; } const T* begin() const { return data_; }
+    const T* end() const { return data_ + size_;  }
+    
     
 //private class info
 private:
@@ -93,6 +98,8 @@ bool operator<=(const MyVector<T>& lhs, const MyVector<T>& rhs);
 template <typename T>
 bool operator>=(const MyVector<T>& lhs, const MyVector<T>& rhs);
 
+template <typename T>
+bool getEven(const MyVector<T>& vector);
 
 
 //CPP FILE --------------------------------------------------
@@ -364,4 +371,18 @@ bool operator<=(const MyVector<T>& lhs, const MyVector<T>& rhs) {
 template <typename T>
 bool operator>=(const MyVector<T>& lhs, const MyVector<T>& rhs) {
     return (operator>(lhs, rhs)) || lhs.operator==(rhs);
+}
+
+
+//LAB get even
+template <typename T>
+bool getEven(const MyVector<T>& vector){
+    for (int i = 0; i < vector.getSize(); i++){
+        if(vector[i] % 2 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
